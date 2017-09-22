@@ -18,8 +18,35 @@
         </activity>
         <activity
             android:name=".lauchMode.SingleTaskDemoActivity"
-            android:launchMode="singleInstance"
-            >
+            android:launchMode="singleInstance">
+        </activity>
+        <activity android:name=".IntentFilterDemo.DesActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+                <data
+                    android:mimeType="image/jpeg"
+                    android:scheme="http"></data>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".IntentFilterDemo.DesActivity2">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+
+                <data
+                    android:scheme="content"></data>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".IntentFilterDemo.DesActivity3">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+                <data
+                    android:mimeType="text/plain"></data>
+            </intent-filter>
         </activity>
     </application>
 
