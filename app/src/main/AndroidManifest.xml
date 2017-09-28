@@ -47,13 +47,15 @@
         <activity android:name=".ThreeAdapter.GestrureDetectorActivity">
         </activity>
         <activity android:name=".ThreeAdapter.smoothScroll.ScollerActivity">
+
+        </activity>
+        <activity android:name=".ThreeAdapter.dispatchTouchEvent.onInterceptDemoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
