@@ -60,6 +60,14 @@ public class HorizontalScrollViewEx extends ViewGroup {
         boolean intercept=false;
         switch (action){
             case MotionEvent.ACTION_DOWN:
+                if(!mScroller.isFinished()){
+                    mScroller.abortAnimation();//如果水平滑动没有完成，则停止滑动
+
+                    //防止mScroller.abortAnimation()停止滑动后，HorizontalScrollViewEx停止滑动
+                    //处于中间状态，其实因为HorizontalScrollViewEx有回弹效果才需要做这个处理，如果
+                    //不会弹，HorizontalScrollViewEx处于中间也是可以的
+                    intercept=true;
+                }
                 intercept=false;
                 break;
             case MotionEvent.ACTION_MOVE:
@@ -77,6 +85,8 @@ public class HorizontalScrollViewEx extends ViewGroup {
         }
         mLastXIntercept=x;
         mLastYIntercept=y;
+        mLastX=x;
+        mLastY=y;
         return intercept;
     }
 
