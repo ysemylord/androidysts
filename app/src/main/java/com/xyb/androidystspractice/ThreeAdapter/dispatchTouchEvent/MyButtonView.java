@@ -32,7 +32,7 @@ public class MyButtonView extends android.support.v7.widget.AppCompatButton {
         int action = event.getAction();
         String ActionStr = Util.getActionStr(action);
         boolean consume=super.dispatchTouchEvent(event);
-        Log.i(TAG, "dispatchTouchEvent"+(consume?"消耗":"不消耗") + ActionStr);
+        //Log.i(TAG, "dispatchTouchEvent"+(consume?"消耗":"不消耗") + ActionStr);
         return consume;
     }
 

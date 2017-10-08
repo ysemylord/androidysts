@@ -38,7 +38,11 @@ public class MyViewGroup extends FrameLayout {
         int action = ev.getAction();
         String ActionStr = Util.getActionStr(action);
         boolean consume;
-       consume = true;
+        if (action == MotionEvent.ACTION_DOWN) {
+            consume = false;
+        } else {
+            consume = true;
+        }
 
         Log.i(TAG, "onInterceptTouchEvent"+(consume?"拦截":"不拦截") + ActionStr);
         return consume;
